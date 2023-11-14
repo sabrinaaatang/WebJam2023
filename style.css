@@ -1,0 +1,27 @@
+#map {
+  height: 100%;
+}
+
+/* 
+   * Optional: Makes the sample page fill the window. 
+   */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  color: black;
+  text-align: center;
+}
+body {
+  background-image: url("https://products.ls.graphics/mesh-gradients/images/41.-Tonys-Pink_1.jpg");
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  background: whitesmoke;
+}
