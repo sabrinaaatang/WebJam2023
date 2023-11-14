@@ -5,13 +5,13 @@ let map;
 
 function initMap() {
   const options = {
-    center: { lat: 33.6424, lng: 117.8417 },
+    center: { lat: 33.6424, lng: -117.8417 },
     zoom: 14,
   };
 
-  map = new Map(document.getElementById("map"), options);
+  map = new google.maps.Map(document.getElementById("map"), options);
 }
-initMap();
+// initMap();
 
 // // Apartment Data
 // const apartmentData = [
