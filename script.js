@@ -1,35 +1,52 @@
 // require("dotenv").config();
 
 // const mapsKey = process.env.GOOGLE_MAPS_API_KEY;
-let map;
 
-function initMap() {
-  const options = {
-    center: { lat: 33.6424, lng: -117.8417 },
-    zoom: 14,
-  };
+var map = L.map("map").setView([33.6424, -117.8417], 13);
 
-  map = new google.maps.Map(document.getElementById("map"), options);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 25,
+  attribution:
+    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+}).addTo(map);
+
+// var marker = L.marker([51.5, -0.09]).addTo(map);
+
+var circle = L.circle([51.508, -0.11], {
+  color: "red",
+  fillColor: "#f03",
+  fillOpacity: 0.5,
+  radius: 500,
+}).addTo(map);
+
+var polygon = L.polygon([
+  [51.509, -0.08],
+  [51.503, -0.06],
+  [51.51, -0.047],
+]).addTo(map);
+
+marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+circle.bindPopup("I am a circle.");
+polygon.bindPopup("I am a polygon.");
+
+var popup = L.popup()
+  .setLatLng([51.513, -0.09])
+  .setContent("I am a standalone popup.")
+  .openOn(map);
+
+function onMapClick(e) {
+  alert("You clicked the map at " + e.latlng);
 }
-// initMap();
 
-// // Apartment Data
-// const apartmentData = [
-//   {
-//     lat: 33.6424,
-//     lng: 117.8417,
-//     name: "Park West Apartments",
-//     address: "3883 Parkview Ln, Irvine, CA 92612",
-//     phone: "(949) 509-1919",
-//     website: "https://www.parkwestapts.com/",
-//   },
-// ];
+map.on("click", onMapClick);
 
-// addMarkers(apartmentData);
+var popup = L.popup();
 
-// // Markers for Apartments
-// function addMarkers(apartments) {}
+function onMapClick(e) {
+  popup
+    .setLatLng(e.latlng)
+    .setContent("You clicked the map at " + e.latlng.toString())
+    .openOn(map);
+}
 
-// // Listener for links to apartment companies
-
-// // List of apartments
+map.on("click", onMapClick);
