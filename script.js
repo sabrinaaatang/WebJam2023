@@ -219,11 +219,7 @@ var veranoPlace = L.polygon([
 ]).addTo(map);
 
 // Irvine Company Apartments
-var berkeley_colCourt = L.polygon([
-  []
 
-
-])
 
 
 
