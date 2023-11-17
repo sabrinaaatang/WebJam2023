@@ -298,33 +298,51 @@ var columbiaCourt = L.polygon([
 ]).addTo(map);
 
 // Other Irvine Co. Estates
-
-
+var turtleRockVista = L.polygon([
+  [33.65449933618267, -117.82218894340609],
+  [33.65451486151225, -117.82056627064408],
+  [33.651469566849165, -117.81898461116671],
+  [33.65086088430339, -117.81932990694634],
+  [33.65067489711139, -117.81975644879176],
+  []
+]);
 
 // paloVerde.bindPopup("This is Palo Verde!");
 paloVerde.on('mouseover', function (e) {
   // Color
   paloVerde.setStyle({fillColor: 'green'});
-  // Popup
+
+  // // Popup with Image
+  // var pvImage = document.createElement('img');
+  // pvImage.src = 'img.png';
+  // pvImage.alt = 'Palo Verde Apartments';
+
+  // Hyperlink in Popup
+  var linkElement = document.createElement('a');
+  linkElement.href = 'https://housing.uci.edu/palo-verde/';
+  linkElement.textContent = "Palo Verde Website";
+  linkElement.style.fontWeight = "bold";
+  linkElement.style.color = "blue";
+  linkElement.target = "_blank"; // Open in new tab
+
+  // Text in Popup
+  var textElement = document.createElement('p');
+  textElement.textContent = "This is Palo Verde!";
+
+  // Container for the Text and Image
+  var containerDiv = document.createElement('div');
+  containerDiv.appendChild(linkElement);
+  containerDiv.appendChild(textElement);
+
   var popup = L.popup()
   .setLatLng([33.64198729972923, -117.83325487380097])
-  .setContent("This is Palo Verde!");
-
+  .setContent(containerDiv);
+  
   // Open on map
   popup.openOn(map);
 });
 
-// Reset Palo Verde on Mouse Out
-paloVerde.on('mouseout', function (e) {
-  paloVerde.setStyle({fillColor: 'blue'});
 
-  map.closePopup();
-});
-
-// var paloVerdePopup = L.popup()
-//   .setLatLng([33.64198729972923, -117.83325487380097])
-//   .setContent("This is Palo Verde!")
-//   .openOn(map);
 
 var mesaCourtPopup = L.popup()
   .setLatLng([33.652365592884045, -117.8447152197266])
@@ -368,19 +386,3 @@ function zoomToFeature(e) {
   map.fitBounds(e.target.getBounds());
 }
 
-// function onMapClick(e) {
-//   alert("You clicked the map at " + e.latlng);
-// }
-
-// map.on("click", onMapClick);
-
-// var popup = L.popup();
-
-// function onMapClick(e) {
-//   popup
-//     .setLatLng(e.latlng)
-//     .setContent("You clicked the map at " + e.latlng.toString())
-//     .openOn(map);
-// }
-
-// map.on("click", onMapClick);

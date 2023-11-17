@@ -37,7 +37,23 @@
 
 </header>
 <body>
-    <div id="map"></div>
+    <div class="mid-container">
+        <div id="map"></div>
+        <div id="ChecklistBox" style="border-width:1px;border-radius:2%;border-style:Solid;height:200px;width:150px;overflow-y:scroll;padding:2px;">
+        <form>
+            <p>Categories:</p>
+            <input type="checkbox" name="test" id="On Campus" value="On Campus" onclick="return ValidateSelection();">
+            <label for="On Campus">On Campus</label>
+            <input type="checkbox" name="test" id="Off Campus" value="Off Campus" onclick="return ValidateSelection();">
+            <label for="Off Campus">Off Campus</label>
+            <input type="checkbox" name="test" id="American Campus Communities" value="American Campus Communities" onclick="return ValidateSelection();">
+            <label for="ACC">American Campus Communities</label>
+            <input type="checkbox" name="test" id="ADA" value="ADA" onclick="return ValidateSelection();">
+            <label for="ADA">Accessible (ADA Compliant)</label>
+        </form>
+        </div>
+    </div>
+
     <div class="bottom-container">
         <h2 class="About">About</h2>
         <p><small>This webpage allows</small></p>
@@ -47,6 +63,7 @@
             <div class="Sabrina">Sabrina Tang</div>
         </div>
     </div>
+
 </body>
 
 </html>
