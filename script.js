@@ -464,7 +464,7 @@ arroyoVista.on('mouseover', function (e) {
   popup.openOn(map);
 });
 
-// middleEarth.bindPopup("This is Mesa Court!");
+// middleEarth.bindPopup("This is Middle Earth!");
 middleEarth.on('mouseover', function (e) {
   // Color
   middleEarth.setStyle({ fillColor: "green" });
@@ -490,6 +490,68 @@ middleEarth.on('mouseover', function (e) {
     .setLatLng([33.6458707831479, -117.83946923328607])
     .setContent(containerDiv);
   
+  // Open on map
+  popup.openOn(map);
+});
+
+// puertaDelSol.bindPopup("This is Puerta Del Sol!");
+puertaDelSol.on('mouseover', function (e) {
+  // Color
+  puertaDelSol.setStyle({ fillColor: "green" });
+
+  // Hyperlink in Popup
+  var linkElement = document.createElement('a');
+  linkElement.href =
+    "https://www.americancampus.com/student-apartments/ca/irvine/puerta-del-sol?utm_source=&utm_medium=&utm_campaign=&utm_content=&gad_source=1&gclid=CjwKCAiAu9yqBhBmEiwAHTx5p0bELQM-bNW3NiXU1wW8lQpgmBfTcPOXk-v_rSUgCD98syqwEfj1nhoCtc8QAvD_BwE";
+  linkElement.textContent = "Puerta Del Sol Website";
+  linkElement.style.fontWeight = "bold";
+  linkElement.style.color = "blue";
+  linkElement.target = "_blank"; // Open in new tab
+
+  // Text in Popup
+  var textElement = document.createElement('p');
+  textElement.textContent = "This is Puerta Del Sol!";
+
+  // Container for the Text and Image
+  var containerDiv = document.createElement('div');
+  containerDiv.appendChild(linkElement);
+  containerDiv.appendChild(textElement);
+
+  var popup = L.popup()
+    .setLatLng([33.64769949036798, -117.83439113593012])
+    .setContent(containerDiv);
+  
+  // Open on map
+  popup.openOn(map);
+});
+
+// plazaVerde.bindPopup("This is Plaza Verde!");
+plazaVerde.on("mouseover", function (e) {
+  // Color
+  plazaVerde.setStyle({ fillColor: "green" });
+
+  // Hyperlink in Popup
+  var linkElement = document.createElement("a");
+  linkElement.href =
+    "https://www.americancampus.com/student-apartments/ca/irvine/plaza-verde";
+  linkElement.textContent = "Plaza Verde Website";
+  linkElement.style.fontWeight = "bold";
+  linkElement.style.color = "blue";
+  linkElement.target = "_blank"; // Open in new tab
+
+  // Text in Popup
+  var textElement = document.createElement("p");
+  textElement.textContent = "This is Plaza Verde!";
+
+  // Container for the Text and Image
+  var containerDiv = document.createElement("div");
+  containerDiv.appendChild(linkElement);
+  containerDiv.appendChild(textElement);
+
+  var popup = L.popup()
+    .setLatLng([33.647574495291494, -117.82844431119825])
+    .setContent(containerDiv);
+
   // Open on map
   popup.openOn(map);
 });
