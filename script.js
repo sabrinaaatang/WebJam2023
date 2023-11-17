@@ -11,15 +11,6 @@ var tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 
-// var marker = L.marker([51.5, -0.09]).addTo(map);
-
-// var circle = L.circle([51.508, -0.11], {
-//   color: "red",
-//   fillColor: "#f03",
-//   fillOpacity: 0.5,
-//   radius: 500,
-// }).addTo(map);
-
 var paloVerde = L.polygon([
   [33.64333608647028, -117.83561305919768],
   [33.64311829832835, -117.83492628861833],
@@ -230,7 +221,6 @@ var berkeleyCourt = L.polygon([
   [33.64885979422833, -117.83740904288702]
 ]).addTo(map);
 
-
 var dartmouthCourt = L.polygon([
   [33.65328802642554, -117.83860996641184],
   [33.65176745064438, -117.83691688049713],
@@ -276,7 +266,6 @@ var cornellCourt = L.polygon([
   [33.64916305923922, -117.83472611808446]
 ]).addTo(map);
 
-
 var ambroseCourt = L.polygon([
   [33.6528254440355, -117.83609155071876],
   [33.65294909602466, -117.83570875662112],
@@ -304,18 +293,91 @@ var turtleRockVista = L.polygon([
   [33.651469566849165, -117.81898461116671],
   [33.65086088430339, -117.81932990694634],
   [33.65067489711139, -117.81975644879176],
-  []
-]);
+  [33.650886246162095, -117.82086342643821],
+  [33.65220505251545, -117.82066031127373],
+  [33.65322250019887, -117.82119356728204]
+]).addTo(map);
+
+var turtleRockCanyon = L.polygon([
+  [33.64481569262275, -117.80468890472433],
+  [33.643469665226284, -117.80292873992862],
+  [33.641509579474224, -117.80434515680939],
+  [33.64278684192681, -117.80627634719353],
+  [33.64384972420838, -117.8054931422044],
+  [33.644599986153914, -117.80551459987534]
+]).addTo(map);
+
+var ranchoSanJoaquin = L.polygon([
+  [33.663685613518574, -117.83105765522453],
+  [33.66258163648097, -117.82950067064084],
+  [33.66203691787472, -117.82790207415619],
+  [33.6608760306496, -117.82807373552366],
+  [33.66151005561384, -117.83012294309795],
+  [33.66168865335188, -117.83165716656978],
+  [33.662858459368984, -117.83148550520231]
+]).addTo(map);
+
+var parkWest = L.polygon([
+  [33.66974330690416, -117.83117759577303],
+  [33.66727010068391, -117.82831872726788],
+  [33.66830142845244, -117.8272243860502],
+  [33.66880146170721, -117.82781447200092],
+  [33.66947114454839, -117.82836700702748],
+  [33.66990142270415, -117.82911823380503],
+  [33.670334479332176, -117.8304968891626],
+]).addTo(map);
+
+var villaSiena = L.polygon([
+  [33.669504746854834, -117.85038215895347],
+  [33.672316893701684, -117.84759499992771],
+  [33.6709376994136, -117.84533514115424],
+  [33.66770290755794, -117.84818128737928]
+]).addTo(map);
+
+var parkPlace = L.polygon([
+  [33.670819217018405, -117.83889637472384],
+  [33.672746260972765, -117.83801851047274],
+  [33.673561535801205, -117.83894726540508],
+  [33.67410151877035, -117.83855286262558],
+  [33.67355094786596, -117.83670807543122],
+  [33.670787452195874, -117.83672079810151],
+]).addTo(map);
+
+var parkWood = L.polygon([
+  [33.658648468230204, -117.80734386172216],
+  [33.65849015219796, -117.80424627809087],
+  [33.65939481131583, -117.80396097433535],
+  [33.66028815286083, -117.80324092200003],
+  [33.66068393412471, -117.80393380254914],
+  [33.66091009402952, -117.80480329970878],
+  [33.66008460750194, -117.80522446239549],
+  [33.659756672299764, -117.80583582758587],
+  [33.65954181752409, -117.80669173885241],
+  [33.65915733921808, -117.80727593225657]
+]).addTo(map);
+var woodbridgeVillas = L.polygon([
+  [33.66606339440695, -117.80662814135444],
+  [33.66761072757879, -117.80542933835227],
+  [33.66796584929765, -117.80860921411227],
+  [33.66624095864369, -117.80879208236684]
+]).addTo(map);
+var villaCoronado = L.polygon([
+  [33.67640113931426, -117.83491865239152],
+  [33.67560844950724, -117.83184274612478],
+  [33.67327988093969, -117.83190227979445],
+  [33.6745680330461, -117.8353155435227]
+]).addTo(map);
+var sanMarco = L.polygon([
+  [33.68141508917175, -117.83245384385303],
+  [33.68026744040256, -117.83032882073861],
+  [33.67807749667364, -117.83138429579544],
+  [33.679049510667745, -117.83449442896291]
+]).addTo(map);
 
 // paloVerde.bindPopup("This is Palo Verde!");
 paloVerde.on('mouseover', function (e) {
   // Color
   paloVerde.setStyle({fillColor: 'green'});
-
-  // // Popup with Image
-  // var pvImage = document.createElement('img');
-  // pvImage.src = 'img.png';
-  // pvImage.alt = 'Palo Verde Apartments';
 
   // Hyperlink in Popup
   var linkElement = document.createElement('a');
@@ -342,17 +404,65 @@ paloVerde.on('mouseover', function (e) {
   popup.openOn(map);
 });
 
+// mesaCourt.bindPopup("This is Mesa Court!");
+mesaCourt.on('mouseover', function (e) {
+  // Color
+  mesaCourt.setStyle({ fillColor: "green" });
 
+  // Hyperlink in Popup
+  var linkElement = document.createElement('a');
+  linkElement.href = 'https://housing.uci.edu/mesa-court/';
+  linkElement.textContent = "Mesa Court Website";
+  linkElement.style.fontWeight = "bold";
+  linkElement.style.color = "blue";
+  linkElement.target = "_blank"; // Open in new tab
 
-var mesaCourtPopup = L.popup()
-  .setLatLng([33.652365592884045, -117.8447152197266])
-  .setContent("This is Mesa Court!")
-  .openOn(map);
+  // Text in Popup
+  var textElement = document.createElement('p');
+  textElement.textContent = "This is Mesa Court!";
 
-var middleEarthPopup = L.popup()
-  .setLatLng([33.64568656466327, -117.83735438096274])
-  .setContent("This is Middle Earth!")
-  .openOn(map);
+  // Container for the Text and Image
+  var containerDiv = document.createElement('div');
+  containerDiv.appendChild(linkElement);
+  containerDiv.appendChild(textElement);
+
+  var popup = L.popup()
+    .setLatLng([33.65150077079017, -117.84608822018754])
+    .setContent(containerDiv);
+  
+  // Open on map
+  popup.openOn(map);
+});
+
+// middleEarth.bindPopup("This is Mesa Court!");
+middleEarth.on('mouseover', function (e) {
+  // Color
+  middleEarth.setStyle({ fillColor: "green" });
+
+  // Hyperlink in Popup
+  var linkElement = document.createElement('a');
+  linkElement.href = "https://housing.uci.edu/middle-earth/";
+  linkElement.textContent = "Middle Earth Website";
+  linkElement.style.fontWeight = "bold";
+  linkElement.style.color = "blue";
+  linkElement.target = "_blank"; // Open in new tab
+
+  // Text in Popup
+  var textElement = document.createElement('p');
+  textElement.textContent = "This is Middle Earth!";
+
+  // Container for the Text and Image
+  var containerDiv = document.createElement('div');
+  containerDiv.appendChild(linkElement);
+  containerDiv.appendChild(textElement);
+
+  var popup = L.popup()
+    .setLatLng([33.6458707831479, -117.83946923328607])
+    .setContent(containerDiv);
+  
+  // Open on map
+  popup.openOn(map);
+});
 
 
 

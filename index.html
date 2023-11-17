@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"></html>
+
 <head>
     <title> WebJam2023 </title>
     <link rel="stylesheet" href="style.css">
@@ -9,7 +10,11 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
-
+    <style>
+        body {
+            background: #b5d3b3;
+        }
+    </style>
 </head>
 <div class="navbar">
   <div class="menu-icon" onclick="toggleMenu()">
@@ -29,17 +34,16 @@
 
     <div class="center-container">
         <h1 class="title"><strong>ZotHomes</strong></h1>
-        <p>Welcome to our WebJam 2023 Project, ZotHomes, where we aim to help UCI students 
-            find housing.
+        <p>Welcome to our WebJam 2023 Project, ZotHomes, where we aim to make apartment hunting for UCI students easier.
         </p>
     </div>
 
 
 </header>
 <body>
-    <div class="mid-container">
+    <div class="float-container">
         <div id="map"></div>
-        <div id="ChecklistBox" style="border-width:1px;border-radius:2%;border-style:Solid;height:200px;width:150px;overflow-y:scroll;padding:2px;">
+        <div id="ChecklistBox" style="border-width:1px;border-radius:2%;border-style:Solid;height:80px;width:1450px;overflow-y:scroll;padding:2px;align-items:'justify''">
         <form>
             <p>Categories:</p>
             <input type="checkbox" name="test" id="On Campus" value="On Campus" onclick="return ValidateSelection();">
@@ -56,7 +60,9 @@
 
     <div class="bottom-container">
         <h2 class="About">About</h2>
-        <p><small>This webpage allows</small></p>
+        <p><small>This webpage allows users to get a glimpse into apartments near the UC Irvine campus. Simply hover the mouse over the shaded
+            area of interest to learn more about the selected complex.
+        </small></p>
         <h2 class="Authors">Authors</h2>
         <div class="authors">
             <div class="Jacob">Jacob Campbell</div>
@@ -65,7 +71,6 @@
     </div>
 
 </body>
-
 </html>
 <script src="script.js">
     function toggleMenu() {
