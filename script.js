@@ -434,6 +434,36 @@ mesaCourt.on('mouseover', function (e) {
   popup.openOn(map);
 });
 
+// arroyoVista.bindPopup("This is Arroyo Vista!");
+arroyoVista.on('mouseover', function (e) {
+  // Color
+  arroyoVista.setStyle({ fillColor: "green" });
+
+  // Hyperlink in Popup
+  var linkElement = document.createElement('a');
+  linkElement.href = "https://housing.uci.edu/arroyo-vista/";
+  linkElement.textContent = "Arroyo Vista Website";
+  linkElement.style.fontWeight = "bold";
+  linkElement.style.color = "blue";
+  linkElement.target = "_blank"; // Open in new tab
+
+  // Text in Popup
+  var textElement = document.createElement('p');
+  textElement.textContent = "This is Arroyo Vista!";
+
+  // Container for the Text and Image
+  var containerDiv = document.createElement('div');
+  containerDiv.appendChild(linkElement);
+  containerDiv.appendChild(textElement);
+
+  var popup = L.popup()
+    .setLatLng([33.645369601311984, -117.8275120752961])
+    .setContent(containerDiv);
+  
+  // Open on map
+  popup.openOn(map);
+});
+
 // middleEarth.bindPopup("This is Mesa Court!");
 middleEarth.on('mouseover', function (e) {
   // Color
@@ -463,8 +493,6 @@ middleEarth.on('mouseover', function (e) {
   // Open on map
   popup.openOn(map);
 });
-
-
 
   // Mousover Event
 function highlightFeature(e) {
