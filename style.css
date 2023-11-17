@@ -16,3 +16,37 @@
 .center-container {
   margin: 30vh 0 30vh 0;
 }
+
+.bottom-container {
+  text-align: center;
+  font-size: 30px;
+}
+
+.authors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+/* Basic CSS for the three-line menu */
+.menu-icon {
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+}
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+}
+/* Toggle animation for the three lines */
+.open .line:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.open .line:nth-child(2) {
+  opacity: 0;
+}
+.open .line:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}

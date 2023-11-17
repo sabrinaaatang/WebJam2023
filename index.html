@@ -11,7 +11,13 @@
      crossorigin=""></script>
 
 </head>
+<div class="menu-icon" onclick="hoverFunction()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+</div>
 <header class="header">
+
     <div class="center-container">
         <h1 class="title">ZotHomes</h1>
         <p>Welcome to our WebJam 2023 Project, ZotHomes, where we aim to help UCI students 
@@ -23,7 +29,21 @@
 </header>
 <body>
     <div id="map"></div>
-    
+    <div class="bottom-container">
+        <h2 class="About">About</h2>
+        <p><small>This webpage allows</small></p>
+        <h2 class="Authors">Authors</h2>
+        <div class="authors">
+            <div class="Jacob">Jacob Campbell</div>
+            <div class="Sabrina">Sabrina Tang</div>
+        </div>
+    </div>
 </body>
+
 </html>
-<script src="script.js"></script>
+<script src="script.js">
+    function hoverFunction() {
+    console.log("Icon hovered over!"); // Replace with your desired action
+    // You can add more actions or modify the DOM here when the icon is hovered over
+  }
+</script>
