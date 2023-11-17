@@ -296,8 +296,12 @@ var columbiaCourt = L.polygon([
   [33.65097752194473, -117.82986393027748],
   [33.651849863914734, -117.82986827863215]
 ]).addTo(map);
-// paloVerde.bindPopup("This is Palo Verde!");
 
+// Other Irvine Co. Estates
+
+
+
+// paloVerde.bindPopup("This is Palo Verde!");
 paloVerde.on('mouseover', function (e) {
   // Color
   paloVerde.setStyle({fillColor: 'green'});

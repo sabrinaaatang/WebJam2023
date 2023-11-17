@@ -11,15 +11,24 @@
      crossorigin=""></script>
 
 </head>
-<div class="menu-icon" onclick="hoverFunction()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+<div class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <div id="dropdownContent" class="dropdown-content">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
 </div>
+
 <header class="header">
 
     <div class="center-container">
-        <h1 class="title">ZotHomes</h1>
+        <h1 class="title"><strong>ZotHomes</strong></h1>
         <p>Welcome to our WebJam 2023 Project, ZotHomes, where we aim to help UCI students 
             find housing.
         </p>
@@ -42,8 +51,8 @@
 
 </html>
 <script src="script.js">
-    function hoverFunction() {
-    console.log("Icon hovered over!"); // Replace with your desired action
-    // You can add more actions or modify the DOM here when the icon is hovered over
+    function toggleMenu() {
+    var dropdownContent = document.getElementById("dropdownContent");
+    dropdownContent.classList.toggle("show");
   }
 </script>
