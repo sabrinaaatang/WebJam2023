@@ -556,6 +556,40 @@ plazaVerde.on("mouseover", function (e) {
   popup.openOn(map);
 });
 
+// plazaVerde2.bindPopup("This is Plaza Verde!");
+plazaVerde2.on("mouseover", function (e) {
+  // Color
+  plazaVerde2.setStyle({ fillColor: "green" });
+
+  // Hyperlink in Popup
+  var linkElement = document.createElement("a");
+  linkElement.href =
+    "https://www.americancampus.com/student-apartments/ca/irvine/plaza-verde-2";
+  linkElement.textContent = "Plaza Verde 2 Website";
+  linkElement.style.fontWeight = "bold";
+  linkElement.style.color = "blue";
+  linkElement.target = "_blank"; // Open in new tab
+
+  // Text in Popup
+  var textElement = document.createElement("p");
+  textElement.textContent = "This is Plaza Verde 2!";
+
+  // Container for the Text and Image
+  var containerDiv = document.createElement("div");
+  containerDiv.appendChild(linkElement);
+  containerDiv.appendChild(textElement);
+
+  var popup = L.popup()
+    .setLatLng([33.64925530743338, -117.82749515845131])
+    .setContent(containerDiv);
+
+  // Open on map
+  popup.openOn(map);
+});
+
+
+
+
   // Mousover Event
 function highlightFeature(e) {
   var layer = e.target;
